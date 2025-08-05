@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Prediction - Anemia Predictor</title>
+    <!-- Use url_for for CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Use a standard navbar -->
+    <nav class="page-header">
+        <div class="logo">Anemia</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('predict') }}">Predict</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+        <a href="{{ url_for('predict') }}" class="btn">Predict Now</a>
+    </nav>
+
+    <div class="page-container predict-section">
+        <div class="form-container">
+            <h2>Prediction Form</h2>
+            <p>Enter the patient's details below to get a prediction.</p>            
+            
+            <!-- The form that POSTs to the /predict route -->
+            <form action="/predict" method="post">
+                <div class="input-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="Gender" required>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="hemoglobin">Hemoglobin (Range: 7-16)</label>
+                    <input type="number" step="0.1" name="Hemoglobin" placeholder="e.g., 14.5" required>
+                </div>
+                <div class="input-group">
+                    <label for="mch">MCH (Range: 16-30)</label>
+                    <input type="number" step="0.1" name="MCH" placeholder="e.g., 29.5" required>
+                </div>
+                <div class="input-group">
+                    <label for="mchc">MCHC (Range: 28-34)</label>
+                    <input type="number" step="0.1" name="MCHC" placeholder="e.g., 33.5" required>
+                </div>
+                <div class="input-group">
+                    <label for="mcv">MCV (Range: 70-100)</label>
+                    <input type="number" step="0.1" name="MCV" placeholder="e.g., 90.0" required>
+                </div>
+                <button type="submit"  class="btn">Submit</button>
+            </form>
+
+            <!-- This section will ONLY show up if a prediction has been made -->
+            
+
+        </div>
+        <div class="image-container">
+
+            {% if prediction_text %}
+            <div class="result-box">
+                <h3>Prediction Result:</h3>
+                <p>{{ prediction_text }}</p>
+            </div>
+
+            {% else %}
+
+             <!-- Replace with your image path -->
+            <img src="{{ url_for('static', filename='images.png') }}" alt="Medical Illustration">
+
+            {% endif %}
+
+        </div>
+    </div>
+    
+</body>
+</html>

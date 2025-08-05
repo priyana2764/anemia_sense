@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Anemia Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="page-header">
+        <div class="logo">Anemia</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('predict') }}">Predict</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+        <a href="{{ url_for('predict') }}" class="btn">Check</a>
+    </nav>
+
+    <div class="page-container about-grid-container">
+
+        <div class="info-card about-summary">
+            <h4>About This Project</h4>
+            <p>Our primary goal with the Anemia Predictor is to offer a free, accessible, and user-friendly tool for preliminary anemia risk assessment. In a world where health information can be overwhelming, we aim to provide a simple first step, thereby raising awareness about this common condition and encouraging proactive health management. We believe that by making people more aware of their potential health risks, we can empower them to seek timely medical advice.</p>
+        </div>
+
+        <div class="info-card metric-card">
+            <h4>Hemoglobin</h4>
+            <p>A protein in red blood cells that carries oxygen. Low levels are the primary indicator of anemia. Healthy ranges: Men: 13.2-16.6 g/dL, Women: 11.6-15 g/dL.</p>
+        </div>
+
+        <div class="info-card metric-card">
+            <h4>MCH</h4>
+            <p>The average amount of hemoglobin per red blood cell. Normal range is between 27.5 and 33.2 picograms (pg).</p>
+        </div>
+
+        <div class="info-card metric-card">
+            <h4>MCHC</h4>
+            <p>The average concentration of hemoglobin in your red blood cells. The normal range is typically 28-34 g/dL.</p>
+        </div>
+
+        <div class="info-card metric-card">
+            <h4>MCV</h4>
+            <p>The average size of your red blood cells. This helps classify the type of anemia. The normal range is 70 to 100 femtoliters (fL).</p>
+        </div>
+
+    </div>
+</body>
+</html>
