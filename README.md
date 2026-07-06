@@ -102,19 +102,20 @@ The Gradient Boosting Classifier was selected as the final model after comparing
 # 📂 Project Structure
 
 ```text
-anemia_sense
+anemia_sense/
 │
-├── images
-│     ├── home.png
-│     ├── prediction.png
-│     └── result.png
+├── images/
+│   ├── home.png
+│   ├── prediction.png
+│   └── result.png
 │
-├── static
-├── templates
-├── Project Report
-├── README.md
+├── static/
+├── templates/
+├── Project Report/
 ├── app.py
 ├── model.pkl
+├── requirements.txt
+└── README.md
 ```
 
 ---
