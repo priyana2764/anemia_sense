@@ -99,6 +99,12 @@ The Gradient Boosting Classifier was selected as the final model after comparing
 
 ---
 
+## 📄 Documentation
+
+Detailed reports covering project planning, data preprocessing, model development, and optimization are available in the **Project Report** folder.
+
+---
+
 # 📂 Project Structure
 
 ```text
