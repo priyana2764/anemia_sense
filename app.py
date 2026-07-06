@@ -36,9 +36,9 @@ def predict():
         result=prediction[0]
 
         if result == 0:
-            message = "You don't have any Anemic Disease"
+            message = "The model predicts that the patient is unlikely to have anemia."
         else:
-            message = "You have anemic disease"
+            message = "The model predicts that the patient may have anemia."
 
         text="Hence, based on calculation: "
         return render_template('predict.html', prediction_text=text+str(message),data=data)
